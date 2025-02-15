@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="FinansBerry.WPF.Views.TradeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel>
+            <Button Content="Load Trades" Command="{Binding LoadTradesCommand}" Margin="5"/>
+            <Button Content="Subscribe" Command="{Binding SubscribeCommand}" Margin="5"/>
+            <Button Content="Unsubscribe" Command="{Binding UnsubscribeCommand}" Margin="5"/>
+            <ListView ItemsSource="{Binding Trades}" Margin="5">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Pair" DisplayMemberBinding="{Binding Pair}" Width="100"/>
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                        <GridViewColumn Header="Amount" DisplayMemberBinding="{Binding Amount}" Width="100"/>
+                        <GridViewColumn Header="Side" DisplayMemberBinding="{Binding Side}" Width="100"/>
+                        <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>
